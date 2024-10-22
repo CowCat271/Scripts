@@ -1,3 +1,5 @@
+#!/bin/bash
+
 discord_ver_dir="/home/cowcat271/Downloads/Discord_versions"
 discord_ver_file=new_discord.deb
 
