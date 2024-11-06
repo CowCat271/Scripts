@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get the list of sinks and their count
 sinks=($(pactl list short sinks | awk '{print $2}'))
