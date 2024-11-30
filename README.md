@@ -1,3 +1,7 @@
+This repo is for my script that I use daily on my Debian system. Some of these scripts may not work on your system due to having different configurations than mine since I only write them for a specific use.
+
+**However**, I would still appreciate any contributions or improvements you might mention to me!
+
 ### To use the toggle audio script with KDE Shortcuts
 
 1. Open System Settings in KDE.
