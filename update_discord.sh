@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 print_error() { echo -e "\e[31mError: $1\e[0m"; }
-
 print_success() { echo -e "\e[32m$1\e[0m"; }
-
 print_info() { echo -e "\e[36m$1\e[0m"; }
-
 print_prompt() { echo -e "\e[33m$1\e[0m"; }
+
+if [[ $EUID -eq 0 ]]; then
+    print_error "This script should not be run as root."
+    exit 1
+fi
 
 # Set package manager variable here
 package_manager="nala"
@@ -62,9 +64,9 @@ read -t 30 -p "(Y/n): " user_input
 user_input=${user_input:-yes}
 
 if [[ "$user_input" =~ ^(yes|y|Y)$ ]]; then
-    print_info "Opening Discord..."
-    nohup discord >/dev/null 2>&1 &
-    print_success "Discord is running in the background."
+    print_info "Opening Discord...";
+    nohup discord > /dev/null 2 > &1 &;
+    print_success "Discord is running in the background.";
 else
     print_info "You chose not to open Discord."
 fi
